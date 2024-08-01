@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.gestor.recursos_humanos.api.model.Orgao;
 import com.gestor.recursos_humanos.api.repository.OrgaoRepository;
 
-import jakarta.persistence.Access;
-
 @Service
 public class OrgaoService {
     @Autowired
