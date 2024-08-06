@@ -15,14 +15,13 @@ import com.gestor.recursos_humanos.api.model.listas.Email;
 import com.gestor.recursos_humanos.api.model.listas.Escolaridade;
 import com.gestor.recursos_humanos.api.model.listas.Estado;
 import com.gestor.recursos_humanos.api.model.listas.EstadoCivil;
+import com.gestor.recursos_humanos.api.model.listas.Etnia;
 import com.gestor.recursos_humanos.api.model.listas.OrientacaoSexual;
 import com.gestor.recursos_humanos.api.model.listas.Pais;
-import com.gestor.recursos_humanos.api.model.listas.Etnia;
 import com.gestor.recursos_humanos.api.model.listas.Sexo;
 import com.gestor.recursos_humanos.api.model.listas.Telefone;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -47,8 +46,7 @@ public class Pessoa implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "id_pessoa")
-    private Integer id;
+    private Integer idPessoa;
 
     @NotNull
     @Size(max=255)

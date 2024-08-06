@@ -7,8 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gestor.recursos_humanos.api.dto.PessoaDto;
@@ -28,9 +28,7 @@ public class PessoaControler {
     }
 
     @PostMapping
-	public ResponseEntity<?> salvarCadastroPessoa(
-			@RequestPart("cadastro") PessoaDto pessoaDto){
-		System.out.println("entrei no método de salvar");
+	public ResponseEntity<?> salvarCadastroPessoa(@RequestBody PessoaDto pessoaDto){
 		Pessoa pessoa = pessoaService.criarNovaPessoa(pessoaDto);
 		if (pessoa != null) {
 			return ResponseEntity.status(HttpStatus.CREATED).body("cadastro efetuado com sucesso!");

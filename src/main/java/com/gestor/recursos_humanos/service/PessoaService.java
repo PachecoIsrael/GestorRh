@@ -23,6 +23,15 @@ public class PessoaService {
     @Autowired
 	private ModelMapper modelMapper;
 
+	@Autowired
+	private LogradouroService logradouroService;
+
+	@Autowired
+	private TelefoneService telefoneService;
+
+	@Autowired
+	private EmailService emailService;
+
     public Pessoa buscarPessoa(Integer idPessoa){
         return pessoaRepository.findByIdPessoa(idPessoa);
     }
@@ -35,6 +44,11 @@ public class PessoaService {
 	public Pessoa criarNovaPessoa(PessoaDto pessoaDto) {
         Pessoa pessoa = modelMapper.map(pessoaDto, Pessoa.class);
     	var pessoaSave = this.salvarPessoa(pessoa);
+		if (pessoaSave != null) {
+			logradouroService.mapearDados(pessoaDto, pessoaSave);
+			telefoneService.salvarTelefone(pessoaDto, pessoaSave);
+			emailService.salvarEmail(pessoaDto, pessoaSave);
+		}
         return pessoaSave;
     }
 

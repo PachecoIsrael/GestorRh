@@ -8,6 +8,7 @@ import com.gestor.recursos_humanos.api.model.listas.Deficiencia;
 import com.gestor.recursos_humanos.api.model.listas.Escolaridade;
 import com.gestor.recursos_humanos.api.model.listas.Estado;
 import com.gestor.recursos_humanos.api.model.listas.EstadoCivil;
+import com.gestor.recursos_humanos.api.model.listas.Etnia;
 import com.gestor.recursos_humanos.api.model.listas.IdentidadeGenero;
 import com.gestor.recursos_humanos.api.model.listas.OrientacaoSexual;
 import com.gestor.recursos_humanos.api.model.listas.Pais;
@@ -61,6 +62,7 @@ public class PessoaDto {
 	@NotNull
 	private Deficiencia deficiencia;
 	private Escolaridade escolaridade;
+	private Etnia etnia;
 
 	@NotNull
 	private Pais pais;
@@ -82,23 +84,16 @@ public class PessoaDto {
 	
 	// endereco
 	private String numero;
-	private Boolean enderecoAtual;
 	private String complemento;
 	private String referencia;
 
 	// contato
 	private String telefone;
-	private Boolean telefoneAtual;
-	private String tipoCelular;
-	private Boolean tipoWhatsapp;
-	private Boolean tipoTelegram;
 
     // email
 	@NotBlank
 	@Email
 	private String email;
-	@NotNull
-	private Boolean emailAtual = true;
 	private String senha;
 	
 }

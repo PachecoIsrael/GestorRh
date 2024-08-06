@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.gestor.recursos_humanos.api.model.listas.Telefone;
 
 @Repository
-public interface ContratoRepository extends JpaRepository<Telefone, Integer>{
-
+public interface TelefoneRepository extends JpaRepository<Telefone, Integer >{
+    
 }
